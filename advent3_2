@@ -13,8 +13,7 @@ def divide_list(l, n):
 	for i in range(0, len(l), n):
 		yield l[i:i + n]
 		
-n = 3
-listofgroups = list(divide_list(allbags, n))
+listofgroups = list(divide_list(allbags, 3))
 
 badges = []
 for group in listofgroups:
