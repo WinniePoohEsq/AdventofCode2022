@@ -10,7 +10,6 @@ numbers = handle.read()
 list = numbers.split('\n')
 similaritems = []
 
-#divide up rucks
 for bigsack in list:
     ruckone = bigsack[0:int(int(len(bigsack))/2)]
     rucktwo = bigsack[int(int(len(bigsack))/2):]
@@ -30,12 +29,7 @@ for bigsack in list:
             similaritems.append(x.group())
             break
     
-#x = len(similaritems)
-#y = len(list)
-#print(x, y)
-#print(similaritems)
 
-#values of items
 alphabet = (string.ascii_letters)
 totalpoints = 0
 for item in similaritems:
