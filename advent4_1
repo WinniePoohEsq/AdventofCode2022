@@ -1,0 +1,25 @@
+import re
+import string
+
+name = input("Enter file:")
+if len(name) < 1:
+    name = "advent4.txt"
+handle = open(name)
+numbers = handle.read()
+
+
+
+numbers = numbers.split('\n')
+#print(numbers)
+counter = 0
+for number in numbers:
+    number = number.split(',')
+    firstrange = number[0].split('-')
+    secondrange = number[1].split('-')
+    if firstrange[0] <= secondrange[0] and firstrange[1] >= secondrange[1]:
+        counter = counter + 1
+        print(number)
+    if secondrange[0] <= firstrange[0] and secondrange[1] >= firstrange[1]:
+        counter = counter + 1
+        print(number)
+print(counter)
