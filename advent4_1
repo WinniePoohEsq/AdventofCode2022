@@ -16,10 +16,14 @@ for number in numbers:
     number = number.split(',')
     firstrange = number[0].split('-')
     secondrange = number[1].split('-')
-    if firstrange[0] <= secondrange[0] and firstrange[1] >= secondrange[1]:
+    if int(firstrange[0]) <= int(secondrange[0]) and int(firstrange[1]) >= int(secondrange[1]):
+        counter = counter + 1
+       print(number)
+        
+    elif int(secondrange[0]) <= int(firstrange[0]) and int(secondrange[1]) >= int(firstrange[1]):
         counter = counter + 1
         print(number)
-    if secondrange[0] <= firstrange[0] and secondrange[1] >= firstrange[1]:
-        counter = counter + 1
-        print(number)
+
+
+
 print(counter)
