@@ -12,7 +12,6 @@ columns = ["RNFVLJSM", "PNDZFJWH", "WRCDG", "NBS", "MZWPCBFN", "PRMW", "RTNGLSW"
 directions = directions.split("\n")
 for direction in directions:
     direction = direction.split()
-    print(direction)
     tomove_count = int(direction[1])
     fromcolumnid = int(direction[3]) - 1
     fromcolumn = columns[fromcolumnid]
@@ -28,7 +27,7 @@ for direction in directions:
     fromcolumn = fromcolumn[:-tomove_count]
     columns[fromcolumnid] = fromcolumn
     columns[tocolumnid] = tocolumn
-    print(columns)
+
 answer = ""
 for column in columns:
     if len(column) > 0:
