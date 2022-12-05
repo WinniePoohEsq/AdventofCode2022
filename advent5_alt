@@ -1,15 +1,5 @@
-import re
-import string
-
-name = input("Enter file:")
-if len(name) < 1:
-    name = "advent5.txt"
-handle = open(name)
-directions = handle.read()
-
 columns = open("advent5_input.txt")
 columns = columns.read()
-
 columns = columns.split("\n")
 
 biglist = []
@@ -48,6 +38,12 @@ columns = finalist
 #columns = ["zn", "mcd", "p"]
 
 
+name = input("Enter file:")
+if len(name) < 1:
+    name = "advent5.txt"
+handle = open(name)
+directions = handle.read()
+
 directions = directions.split("\n")
 for direction in directions:
     direction = direction.split()
@@ -60,8 +56,8 @@ for direction in directions:
     if tomove_count > int(len(fromcolumn)):
         tomove_count = int(len(fromcolumn))
     tomove_letters = fromcolumn[-tomove_count:]
-    #for letter in reversed(tomove_letters):
-    for letter in (tomove_letters):
+    for letter in reversed(tomove_letters):
+    #for letter in (tomove_letters):
         tocolumn = tocolumn + letter
     fromcolumn = fromcolumn[:-tomove_count]
     columns[fromcolumnid] = fromcolumn
