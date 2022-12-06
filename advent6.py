@@ -16,7 +16,7 @@ for number in numbers:
 numbers = numbers[14:]
 index = 13
 for number in numbers:
-    index = index +  1
+    index = index + 1
     y = len(set(check_string))
     if y < 14:
         check_string.append(number)
