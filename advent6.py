@@ -1,6 +1,3 @@
-import string
-import re
-
 name = "advent6.txt"
 handle = open(name)
 numbers = handle.read()
