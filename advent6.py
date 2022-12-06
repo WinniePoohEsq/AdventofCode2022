@@ -10,7 +10,7 @@ counter = x
 for number in numbers:
     while counter > 0:
         check_string.append(number)
-        counter = counter - 1
+        counter -= 1
 
 numbers = numbers[x:]
 index = x
@@ -18,7 +18,7 @@ for number in numbers:
     y = len(set(check_string))
     if y < x:
         check_string.append(number)
-        index = index + 1
+        index += 1
         check_string = check_string[1:]
     else:
         print(index)
