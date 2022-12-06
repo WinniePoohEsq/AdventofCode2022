@@ -1,20 +1,23 @@
-columns = open("advent5_input.txt")
+columns = open("advent5_fullinput.txt")
 columns = columns.read()
-columns = columns.split("\n")
+columns = columns.split("\n\n")
 
+initial = columns[0]
+directions = columns[1]
 biglist = []
 workinglist = []
 
-for column in columns:
-    column = column.replace('[', '').replace(']', '').replace('  ', ' ')
-    workinglist.append(column)
+initial = initial.split('\n')
+for i in initial:
+    i = i.replace('[', '').replace(']', '').replace('  ', ' ').replace('\n', '')
+    workinglist.append(i)
 
 workinglist = workinglist[:-1]
 
 for item in workinglist:
     item = item[::2]
     biglist.append(item)
-
+#print(biglist)
 workinglistoflists = [i for i in range(9)]
 
 for item in biglist:
@@ -31,18 +34,10 @@ for i in workinglistoflists:
     i = i[::-1]
     i = i.strip(' ')
     finalist.append(i)
-    
 
 columns = finalist
 #columns = ["RNFVLJSM", "PNDZFJWH", "WRCDG", "NBS", "MZWPCBFN", "PRMW", "RTNGLSW", "QTHFNBV", "LMHZNF"]
 #columns = ["zn", "mcd", "p"]
-
-
-name = input("Enter file:")
-if len(name) < 1:
-    name = "advent5.txt"
-handle = open(name)
-directions = handle.read()
 
 directions = directions.split("\n")
 for direction in directions:
