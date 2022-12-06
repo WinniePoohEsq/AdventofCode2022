@@ -1,9 +1,10 @@
 columns = open("advent5_fullinput.txt")
 columns = columns.read()
 columns = columns.split("\n\n")
-
 initial = columns[0]
 directions = columns[1]
+
+
 biglist = []
 workinglist = []
 
@@ -17,7 +18,7 @@ workinglist = workinglist[:-1]
 for item in workinglist:
     item = item[::2]
     biglist.append(item)
-#print(biglist)
+
 workinglistoflists = [i for i in range(9)]
 
 for item in biglist:
@@ -42,7 +43,6 @@ columns = finalist
 directions = directions.split("\n")
 for direction in directions:
     direction = direction.split()
-    #print(direction)
     tomove_count = int(direction[1])
     fromcolumnid = int(direction[3]) - 1
     fromcolumn = columns[fromcolumnid]
@@ -57,7 +57,7 @@ for direction in directions:
     fromcolumn = fromcolumn[:-tomove_count]
     columns[fromcolumnid] = fromcolumn
     columns[tocolumnid] = tocolumn
-    #print(columns)
+
 answer = ""
 for column in columns:
     if len(column) > 0:
